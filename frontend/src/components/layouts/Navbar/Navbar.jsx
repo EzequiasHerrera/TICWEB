@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../common/Button/Button";
 import { useAuth } from "../../../context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
+import logoFull from '@/assets/images/logofull.webp';
 
 const Navbar = () => {
     const { user, setUser } = useAuth();
@@ -23,7 +24,7 @@ const Navbar = () => {
             <Link to="/home">
                 <img
                     className="size-15"
-                    src="src/assets/images/logofull.webp"
+                    src={logoFull}
                     alt="Logo TIC Full"
                 />
             </Link>
