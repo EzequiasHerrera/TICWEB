@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoPixel from "@/assets/images/logopixel.webp"
 
 const TabletButton = ({ to, icon, name }) => {
   if (icon === "tic") {
@@ -10,7 +11,7 @@ const TabletButton = ({ to, icon, name }) => {
       >
         <img
           className="size-9 sm:size-12 drop-shadow-[0_0_10px_#dc5b23] mb-3"
-          src="src/assets/images/logopixel.webp"
+          src={logoPixel}
           alt="Icono Pixelart TIC"
         />
         <p className="sm:break-normal sm:text-sm sm:leading-4 leading-1 text-[10px]">{name}</p>
