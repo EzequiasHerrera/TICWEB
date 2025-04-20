@@ -6,7 +6,7 @@ const Tablet = ({ children }) => {
   return (
     <div className="flex justify-end w-3xl sm:w-full sm:h-full overflow-hidden">
       <div
-        className="bg-watchscreen sm:bg-tabletonhand bg-contain bg-no-repeat bg-center md:h-[400px] sm:bg-right sm:w-[500px] sm:h-[400px] w-[800px] h-[300px] relative
+        className="bg-[url('/images/watchscreen.webp')] sm:bg-[url('/images/tabletonahand.webp')] bg-contain bg-no-repeat bg-center md:h-[400px] sm:bg-right sm:w-[500px] sm:h-[400px] w-[800px] h-[300px] relative
       
         before:content-[''] before:bg-white before:opacity-20 before:blur-xs before:pointer-events-none
         before:w-3 before:h-20 before:rotate-50 before:absolute before:z-50 before:left-94 before:top-28

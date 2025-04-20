@@ -32,6 +32,3 @@ body {
       scrollbar-width: none;  /* Firefox */
 }
 }
-
-.bg-watchscreen {background-image: url('/images/watchscreen.webp');}
-.bg-tabletonhand {background-image: url('/images/tabletonahand.webp');}
