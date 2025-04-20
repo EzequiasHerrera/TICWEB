@@ -79,7 +79,7 @@ const loginCallback = async (req, res, next) => {
       maxAge: 15 * 60 * 1000, //MINUTOS. CAMBIAR EL 1
     });
 
-    res.redirect('http://localhost:5173/home');
+    res.redirect('https://tic-web-five.vercel.app/home');
 
   } catch (error) {
     next(error);
