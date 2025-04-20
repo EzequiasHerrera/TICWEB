@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../context/AuthContext/AuthContext";
-import Button from "../../../components/common/Button/Button";
 import axios from "axios";
 
-const TicketForm = () => {
+const TicketForm = ({showActive, setShowActive, setIsSuccess}) => {
     const backendURL = import.meta.env.VITE_BACKEND_URL;
     const { user } = useAuth();
     const [categories, setCategories] = useState([]);
-    // const {handleSendTicket} =
 
-    //FALTA DESARROLLAR EL ENVIO DEL TICKET A LA BASE DE DATOS
+    useEffect(() => {
+        if (showActive){
+            setTimeout(() => {
+                setShowActive(false);
+            }, 3000);
+        }
+    }, [showActive])
+
+
     const handleSendTicket = (e) => {
-        //ES LA MISMA LOGICA QUE CREAR UN RECURSO
         e.preventDefault();
         const form = e.target;
 
@@ -22,10 +27,25 @@ const TicketForm = () => {
             categoria: form.categoria.value,
         };
 
-        axios
+        const hayCamposVacios = Object.values(solicitud).some(valor => !valor);
+        
+        if (!hayCamposVacios){   
+            axios
             .post(`${backendURL}/home/solicitudes`, solicitud)
             .then((res) => console.log("Ticket enviado:", res.data))
             .catch((err) => console.error("Error al enviar el ticket:", err));
+            
+            form.asunto.value = "";
+            form.descripcion.value = "";
+            form.categoria.value = "";
+            
+            setIsSuccess(true);
+        } else {
+            setIsSuccess(false)
+            
+        }
+
+        setShowActive(true);
     };
 
     useEffect(() => {

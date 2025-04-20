@@ -76,10 +76,10 @@ const loginCallback = async (req, res, next) => {
       httpOnly: true,    // No accesible desde JavaScript (más seguro)
       secure: false,     // En producción debe ser `true`
       sameSite: "Lax",   // Permite compartir la cookie entre frontend y backend
-      maxAge: 1 * 60 * 1000, // Expira en 5 horas
+      maxAge: 15 * 60 * 1000, //MINUTOS. CAMBIAR EL 1
     });
 
-    res.redirect('https://tic-web-five.vercel.app/home');
+    res.redirect('http://localhost:5173/home');
 
   } catch (error) {
     next(error);

@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext/AuthContext";
 import Button from "../../components/common/Button/Button";
 import TicketForm from "../../components/specific/TicketForm/TicketForm";
+import ActionAlert from "../../components/common/ActionAlert/ActionAlert";
 
 const Tickets = () => {
     const { user } = useAuth();
+    const [showActive, setShowActive] = useState();
+    const [isSuccess, setIsSuccess] = useState();
+
     return (
         <div className="bg-gray-950 w-full min-h-[calc(100vh-160px)] flex flex-col items-center sm:px-6">
+            {showActive && isSuccess && <ActionAlert text="Ticket enviado con éxito" type="success" />}
+            {showActive && !isSuccess && <ActionAlert text="Ticket enviado con éxito" />}
+
             {user?.rol.toUpperCase() === "INVITADO" && (
                 <div className="fixed text-center transition-transform bg-black/50 backdrop-blur-sm inset-0 flex items-center justify-center">
                     <div className="fixed flex flex-col items-center m-6 bg-white text-black rounded-2xl sm:p-10 p-5">
@@ -36,7 +43,7 @@ const Tickets = () => {
                     </span>
                 </div>
 
-                <TicketForm />
+                <TicketForm showActive={showActive} setShowActive={setShowActive} setIsSuccess={setIsSuccess}/>
             </div>
         </div>
     );
