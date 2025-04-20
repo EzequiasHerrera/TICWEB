@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import isologotipoUTN from '@/assets/images/isologotipoutn.png';
+
 
 const Footer = () => {
     const backendURL = import.meta.env.VITE_BACKEND_URL;
@@ -21,7 +23,7 @@ const Footer = () => {
             <div className="sm:p-4 p-6 flex justify-center">
                 <img
                     className="max-w-[250px]"
-                    src="src/assets/images/isologotipoutn.png"
+                    src={isologotipoUTN}
                     alt={footerInfo ? footerInfo.descripcion : "Imagen"}
                 />
             </div>
