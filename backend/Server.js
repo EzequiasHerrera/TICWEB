@@ -22,7 +22,7 @@ class Server {
 
   cargarMiddlewares() {
     const corsOptions = {
-      origin: process.env.FRONTEND_URL,  // Tu frontend
+      origin: 'https://tic-web-five.vercel.app',  // Tu frontend
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],
