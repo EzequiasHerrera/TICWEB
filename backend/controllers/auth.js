@@ -74,9 +74,10 @@ const loginCallback = async (req, res, next) => {
 
     res.cookie("auth_token", accessToken, {
       httpOnly: true,    // No accesible desde JavaScript (más seguro)
-      secure: false,     // En producción debe ser `true`
-      sameSite: "Lax",   // Permite compartir la cookie entre frontend y backend
+      secure: true,     // En producción debe ser `true`
+      sameSite: "None",   // Permite compartir la cookie entre frontend y backend
       maxAge: 15 * 60 * 1000, //MINUTOS. CAMBIAR EL 1
+      domain: ".vercel.app",
     });
 
     res.redirect('https://tic-web-five.vercel.app/home');
