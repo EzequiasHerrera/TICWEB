@@ -123,7 +123,7 @@ const EditModal = ({}) => {
                             <input
                                 type="text"
                                 name="telefono"
-                                defaultValue={selectedResource?.text || ""}
+                                defaultValue={selectedResource?.telefono || ""}
                                 className="bg-gray-300 rounded-sm p-1 mb-2 border border-gray-300 focus:outline-none"
                             />
                             <select
@@ -384,7 +384,7 @@ const EditModal = ({}) => {
                         </>
                     )}
 
-                    <div>
+                    <div className="gap-5">
                         <button
                             type="submit"
                             className="px-5 py-1 bg-orangetic text-white rounded-xl cursor-pointer hover:bg-orangetic hover:scale-105 mt-4"
@@ -396,7 +396,7 @@ const EditModal = ({}) => {
                             onClick={() => {
                                 setIsEditing(false);
                             }}
-                            className="px-5 py-1 bg-red-600 text-white rounded-xl cursor-pointer hover:bg-orangetic hover:scale-105 mt-4"
+                            className="px-5 py-1 bg-red-500 text-white rounded-xl cursor-pointer hover:bg-orangetic hover:scale-105 mt-4"
                         >
                             Cancelar
                         </button>

@@ -11,10 +11,10 @@ const ResourceItem = ({ resource }) => {
     } = useResContext(); //MODULARIZAR DE FORMA QUE EL MODAL SEA GENERICO TANTO PARA BORRAR COMO PARA EDITAR UN RECURSO
 
     const estadoColors = {
-        pendiente: "bg-red-700",
-        en_proceso: "bg-yellow-500",
-        completada: "bg-green-600",
-    };
+        pendiente: "bg-red-400 text-white font-bold",
+        en_proceso: "bg-yellow-400 text-black",
+        completada: "bg-green-500 text-white",
+    };    
 
     const getMaterialColor = () => {
         if (resourceName === "Materiales") {
