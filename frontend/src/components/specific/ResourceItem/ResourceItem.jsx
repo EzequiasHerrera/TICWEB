@@ -67,7 +67,7 @@ const ResourceItem = ({ resource }) => {
                     onClick={() => {
                         setIdSelected(resource._id), setIsDeleting(true);
                     }}
-                    className="bg-red-600 cursor-pointer rounded-2xl text-nowrap p-1 hover:bg-red-400"
+                    className="bg-red-500 cursor-pointer rounded-2xl text-nowrap p-1 hover:bg-red-400"
                 >
                     ❌ Eliminar
                 </button>

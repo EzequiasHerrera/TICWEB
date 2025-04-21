@@ -13,11 +13,13 @@ const Navbar = () => {
             method: "POST",
             credentials: "include",
         });
+    
         setUser(null);
-        window.location.reload();
-        // window.location.href =
-        //     "https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=http://localhost:5173/";
+    
+        window.location.href =
+            "https://login.microsoftonline.com/common/oauth2/v2.0/logout?post_logout_redirect_uri=https://tic-web-five.vercel.app";
     };
+    
 
     return (
         <nav className="flex justify-between items-center w-full h-20 sm:px-10 px-3 bg-gray-950 text-white">
