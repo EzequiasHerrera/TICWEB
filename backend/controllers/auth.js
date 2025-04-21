@@ -35,8 +35,8 @@ const userInfo = async (req, res) => {
 const logout = (req, res) => {
   res.clearCookie("auth_token", {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "None",
   });
   res.json({ message: "Logout exitoso" });
 };
@@ -77,7 +77,6 @@ const loginCallback = async (req, res, next) => {
       secure: true,     // En producción debe ser `true`
       sameSite: "None",   // Permite compartir la cookie entre frontend y backend
       maxAge: 15 * 60 * 1000, //MINUTOS. CAMBIAR EL 1
-      domain: ".vercel.app",
     });
 
     res.redirect('https://tic-web-five.vercel.app/home');
