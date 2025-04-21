@@ -11,7 +11,7 @@ const ResourceItem = ({ resource }) => {
     } = useResContext(); //MODULARIZAR DE FORMA QUE EL MODAL SEA GENERICO TANTO PARA BORRAR COMO PARA EDITAR UN RECURSO
 
     const estadoColors = {
-        pendiente: "bg-red-400 text-white font-bold",
+        pendiente: "bg-red-500 text-white font-bold",
         en_proceso: "bg-yellow-400 text-black",
         completada: "bg-green-500 text-white",
     };    
@@ -67,7 +67,7 @@ const ResourceItem = ({ resource }) => {
                     onClick={() => {
                         setIdSelected(resource._id), setIsDeleting(true);
                     }}
-                    className="bg-red-500 cursor-pointer rounded-2xl text-nowrap p-1 hover:bg-red-400"
+                    className="bg-red-500 text-white font-bold cursor-pointer rounded-2xl text-nowrap p-1 hover:bg-red-400"
                 >
                     ❌ Eliminar
                 </button>
@@ -75,7 +75,7 @@ const ResourceItem = ({ resource }) => {
                     onClick={() => {
                         setSelectedResource(resource), setIsEditing(true);
                     }}
-                    className="bg-blue-500 cursor-pointer rounded-2xl text-nowrap p-1 hover:bg-blue-300"
+                    className="bg-blue-500 text-white font-bold cursor-pointer rounded-2xl text-nowrap p-1 hover:bg-blue-300"
                 >
                     ✍🏻 Editar
                 </button>
