@@ -3,6 +3,7 @@ import { useAuth } from "../../context/AuthContext/AuthContext";
 import Button from "../../components/common/Button/Button";
 import TicketForm from "../../components/specific/TicketForm/TicketForm";
 import ActionAlert from "../../components/common/ActionAlert/ActionAlert";
+import alertaPixel from '@/assets/images/alertapixel.webp';
 
 const Tickets = () => {
     const { user } = useAuth();
@@ -19,7 +20,7 @@ const Tickets = () => {
                     <div className="fixed flex flex-col items-center m-6 bg-white text-black rounded-2xl sm:p-10 p-5">
                         <img
                             className="size-15"
-                            src="src/assets/images/alertapixel.webp"
+                            src={alertaPixel}
                             alt=""
                         />
                         <p className="p-3 sm:p-6 text-2xl">
